@@ -7,6 +7,7 @@ class Nav extends Element
 {
     public $newWindow;
     public $classes;
+    public $navId;
     
     public function fields()
     {
@@ -17,6 +18,7 @@ class Nav extends Element
             'newWindow',
             'classes',
             'enabled',
+            'navId',
             'descendants'
         ];
     }
@@ -31,6 +33,7 @@ class Nav extends Element
         $this->url = $this->model->getUrl();
         $this->newWindow = $this->model->newWindow == 1;
         $this->classes = $this->model->classes;
+        $this->navId = (int)$this->model->navId;
     }
     
     protected function getElementClass($element)

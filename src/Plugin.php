@@ -17,6 +17,7 @@ class Plugin extends \craft\base\Plugin
             UrlManager::EVENT_REGISTER_SITE_URL_RULES,
             function (RegisterUrlRulesEvent $event) {
                 $event->rules['rest/v1/nav'] = 'navapi/v1/nav';
+                $event->rules['rest/v1/nav/<id>'] = 'navapi/v1/nav/view';
             }
         );
     }

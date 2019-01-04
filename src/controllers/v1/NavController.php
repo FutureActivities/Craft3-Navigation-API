@@ -31,4 +31,16 @@ class NavController extends ActiveController
             'query' => $query
         ]);
     }
+    
+    public function actionView($id)
+    {
+        $query = Node::find()->status(null)->navId($id);
+        
+        if ($query->count() == 0)
+            throw new BadRequestException('Could not find entry');
+            
+        return new NavDataProvider([
+            'query' => $query
+        ]);
+    }
 }

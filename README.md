@@ -7,6 +7,7 @@ Requires the [Future Activities Craft 3 REST API](https://github.com/FutureActiv
 ## Usage
 
     GET /rest/v1/nav[?filter,expand]
+    GET /rest/v1/nav/<id>[?expand]
     
 where:
 
@@ -15,10 +16,14 @@ where:
 
 ## Examples
 
+Get all nodes across all menus (supports filtering)
+
+    GET /rest/v1/nav
+
 Get all nodes in menu ID 1:
 
-    GET /rest/v1/nav?filter[navId]=1
+    GET /rest/v1/nav/1
     
 Get all nodes in menu ID 1 and expand the descendants:
 
-    GET /rest/v1/nav?filter[navId]=1&expand=descendants
+    GET /rest/v1/nav/1?expand=descendants
