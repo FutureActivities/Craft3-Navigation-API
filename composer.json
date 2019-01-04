@@ -1,0 +1,22 @@
+{
+  "name": "futureactivities/craft3-navigation-api",
+  "description": "Extends Verbb Navigation to provide REST API support",
+  "version": "1.0.0",
+  "type": "craft-plugin",
+  "require": {
+    "craftcms/cms": "^3.0.0",
+    "verbb/navigation": "^1.0.0",
+    "futureactivities/craft3-rest-api": "^1.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "futureactivities\\navapi\\": "src/"
+    }
+  },
+  "extra": {
+    "handle": "navapi",
+    "name": "Craft 3 Navigation API",
+    "developer": "Future Activities",
+    "developerUrl": "https://github.com/FutureActivities"
+  }
+}
