@@ -2,6 +2,7 @@
 namespace futureactivities\navapi\models;
 
 use futureactivities\rest\models\Element;
+use craft\helpers\UrlHelper;
 
 class Nav extends Element
 {
@@ -30,7 +31,7 @@ class Nav extends Element
             
         parent::processModel();
         
-        $this->url = $this->model->getUrl();
+        $this->url = str_replace(UrlHelper::baseSiteUrl(), '', $this->model->getUrl());
         $this->newWindow = $this->model->newWindow == 1;
         $this->classes = $this->model->classes;
         $this->navId = (int)$this->model->navId;
