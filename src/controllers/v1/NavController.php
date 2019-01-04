@@ -34,7 +34,15 @@ class NavController extends ActiveController
     
     public function actionView($id)
     {
-        $query = Node::find()->status(null)->navId($id);
+        $query = Node::find()->navId($id);
+        
+        if (API::getInstance()->settings->disabled == 1)
+            $query->status(null);
+        
+        if ($filter = Craft::$app->request->getParam('filter')) {
+            foreach ($filter AS $key => $value)
+                $query->$key($value);
+        }
         
         if ($query->count() == 0)
             throw new BadRequestException('Could not find entry');

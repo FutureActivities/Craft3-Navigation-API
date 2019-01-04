@@ -7,7 +7,7 @@ Requires the [Future Activities Craft 3 REST API](https://github.com/FutureActiv
 ## Usage
 
     GET /rest/v1/nav[?filter,expand]
-    GET /rest/v1/nav/<id>[?expand]
+    GET /rest/v1/nav/<id>[?filter,expand]
     
 where:
 
