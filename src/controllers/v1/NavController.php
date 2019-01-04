@@ -27,6 +27,8 @@ class NavController extends ActiveController
                 $query->$key($value);
         }
         
+        $query->orderBy('lft');
+        
         return new NavDataProvider([
             'query' => $query
         ]);
@@ -43,6 +45,8 @@ class NavController extends ActiveController
             foreach ($filter AS $key => $value)
                 $query->$key($value);
         }
+        
+        $query->orderBy('lft');
         
         if ($query->count() == 0)
             throw new BadRequestException('Could not find entry');
