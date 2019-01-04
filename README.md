@@ -1,6 +1,6 @@
 # Future Activities Craft 3 Navigation API
 
-This plugin extends the Verbb Navigation plugin to provide REST API support.
+This plugin extends the [Verbb Navigation](https://github.com/verbb/navigation) plugin to provide REST API support.
 
 Requires the [Future Activities Craft 3 REST API](https://github.com/FutureActivities/Craft3-REST-API) plugin.
 
